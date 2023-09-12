@@ -1,0 +1,28 @@
+----HOME FORM----
+    Tool Box 
+  1.Menu Strip
+  2. List box.
+  3. Button
+
+Process[]proc;
+-A Process Component Provides access to a process that is running on a Computer.
+-A Process in the Simplest Terms, is Running App.
+-A Thread is the Basic unit to which the Operating System Allocates Processor time.
+-A Thread can execute any part of the code of the Process, including parts currently being executed by another thread.
+-The Process Component is a UseFull Tool for Starting, Stopping, Controlling, and monitoring Apps.
+-You can use the Process Component, to obtain a list of the Processes that are running, or you can start a New Process.
+- After a Process Component has been initialized, it can be used to obtain information about the running process.
+ 
+ public void GetProcess(ListBox l1)
+        {
+            process = Process.GetProcesses();
+            //PerformanceCounter pid = new PerformanceCounter("Procees", "ID Process", "proc");
+            //procPID = Process.GetProcessById();
+            l1.Items.Clear();
+            foreach (Process P in process)
+            {
+                tot++;
+                l1.Items.Add(P.ProcessName);
+            }
+
+// Such Information includes the set of threads, the loaded modules, and performance information such as the amount of memory the process is using   
